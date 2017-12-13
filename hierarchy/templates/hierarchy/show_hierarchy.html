@@ -1,0 +1,37 @@
+<html>
+<body> 
+<h1>Hierarchy</h1>
+<p>Select Designation for which hierarchy is to be displayed</p>   
+<form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+	
+        <button type="submit" class="save btn btn-default">Show</button>
+    </form>
+
+
+
+</body>
+</html>
+
+{% if form%}
+    	
+    <p>Superiors</P>
+    
+    	{% for d in form.data.dat2 %}
+        	<ul>{{d}}</ul>
+    	{% endfor %}
+    
+     <p>Juniors</P>
+    		
+    	{% for d in form.data.dat1 %}
+        	<ul>{{d}}</ul>
+    	{% endfor %}
+    
+{% else %}
+    <p>No data available</p>
+{% endif %}
+
+
+
+
+

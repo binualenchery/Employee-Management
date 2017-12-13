@@ -1,0 +1,17 @@
+<html>
+<body>
+
+<h1>New Hierarchy</h1>
+<p>Select a Name(Designation) and select 1 or more (use ctrl) juniors and save. Those junior designations will be added under him</p>
+   	
+   <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+	
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</body>
+</html>
+
+
+
+
